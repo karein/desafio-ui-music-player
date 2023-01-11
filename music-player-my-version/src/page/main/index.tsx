@@ -27,8 +27,11 @@ export function Main() {
         </div>
 
         <div className='marcadores'>
-          <span>03:20</span>
-          <span>03:20</span>
+          <div className='barTime'></div>
+          <div className='timer'>
+            <span>03:20</span>
+            <span>03:20</span>
+          </div>
         </div>
       </div>
 
