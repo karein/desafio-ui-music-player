@@ -16,6 +16,12 @@ export const GlobalStyles = createGlobalStyle`
       font-size: 87.5%;
     }
 
+    body{
+      color: #E1E1E6;
+      /* position: relative; */
+      background-color: #0F0D13;
+    }
+
     body, button{
     font-family: 'Roboto', sans-serif ;
     font-weight: 400;
