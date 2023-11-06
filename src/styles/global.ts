@@ -20,6 +20,7 @@ export const GlobalStyles = createGlobalStyle`
       color: #E1E1E6;
       /* position: relative; */
       background-color: #0F0D13;
+      font-smooth: antialiased;
     }
 
     body, button{

@@ -9,13 +9,13 @@ export const Container = styled.div`
   div {
     &.container-grid {
       display: grid;
-      grid-template-rows: 1fr 1fr;
+      grid-template-rows: auto;
       grid-template-areas:
         "full half half"
         "full min min";
 
       /* border: 1px solid red; */
-      gap: 0.25rem;
+      gap: 32px;
 
       div {
         &.full-ui-view {
@@ -27,8 +27,8 @@ export const Container = styled.div`
           background: #2A2141;
           border-radius: 9px;
 
-          padding: 2.375rem;
           gap: 28px;
+          padding: 38px;
 
           div {
             &.music-info {
@@ -56,17 +56,104 @@ export const Container = styled.div`
         }
 
         &.half-ui-view {
-          background: #1f2128;
+          background: #2A2141;
           grid-area: half;
-          padding: 1.813rem;
-          /* padding: 0.25rem; */
+          display: flex;
+          padding: 29px;
+          gap: 28px;
+          flex-direction: column;
+          border-radius: 10px;
+
+          div {
+            display: flex;
+            flex-direction: row;
+            gap: 28px;
+            
+            div {
+              img {
+                &.albumCoverImgHalf{
+                  height: 84px;
+                  width: 84px;
+                }
+              }
+            }
+
+            div{
+              &.music-info-half {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+              }
+            }
+          }
+
+          div {
+            &.action-buttons{
+              display: flex;
+              justify-content: space-evenly;
+            }
+          }
+
+          div {
+            &.progressInfo {
+              display: flex;
+              flex-direction: column;
+
+              img {
+                width: 300px;
+              }
+  
+              div {
+                &.time-progress {
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: space-between;
+                }
+              }
+            }
+          }
+
         }
 
         &.min-ui-view {
-          background: #ff9637;
+          padding: 29px;
           grid-area: min;
-          /* padding: 0.25rem; */
-          padding: 1.813rem;
+          background: #2A2141;
+
+          display: flex;
+          flex-direction: column;
+          border-radius: 10px;
+          gap: 28px;
+
+          div {
+            display: flex;
+            flex-direction: row;
+            gap: 28px;
+            
+            div {
+              img {
+                &.albumCoverImgHalf{
+                  height: 84px;
+                  width: 84px;
+                }
+              }
+            }
+
+            div {
+              &.music-info-half {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+              }
+            }
+          }
+
+          div {
+            &.action-buttons{
+              display: flex;
+              justify-content: space-evenly;
+            }
+          }
         }
       }
     }

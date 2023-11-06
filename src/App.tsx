@@ -36,11 +36,50 @@ export function App() {
           </div>
 
           <div className='half-ui-view'>
-            <span> half </span>
+            <div>
+              <div>
+                <img src={albumCover} alt="" className='albumCoverImgHalf' />
+              </div>
+
+              <div className='music-info-half'>
+                <Title>titulo</Title>
+                <SubTitle>subtitulo</SubTitle>
+              </div>
+            </div>
+
+            <div className='action-buttons'>
+              <img src={backButton} alt="" />
+              <img src={playButton} alt="" />
+              <img src={forwardButton} alt="" />
+            </div>
+
+            <div className='progressInfo'>
+              <img src={progressBar} alt="" />
+
+              <div className='time-progress'>
+                <span>03:20</span>
+                <span>00:12</span>
+              </div>
+            </div>
           </div>
 
           <div className='min-ui-view'>
-            <span> min </span>
+            <div>
+              <div>
+                <img src={albumCover} alt="" className='albumCoverImgHalf' />
+              </div>
+
+              <div className='music-info-half'>
+                <Title>titulo</Title>
+                <SubTitle>subtitulo</SubTitle>
+              </div>
+            </div>
+
+            <div className='action-buttons'>
+              <img src={backButton} alt="" />
+              <img src={playButton} alt="" />
+              <img src={forwardButton} alt="" />
+            </div>
           </div>
         </div>
       </Container>
