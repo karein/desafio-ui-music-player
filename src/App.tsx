@@ -12,41 +12,47 @@ export function App() {
     <>
       <Container>
         <div className='container-grid'>
-          <div className='full-ui-view'>
-            <AlbumCover />
 
-            <MusicInfo title='Cure For Me' subtitle='Aurora' />
+          <div className='left-side'>
+            <div className='full-ui-view'>
+              <AlbumCover />
 
-            <ActionButtons />
+              <MusicInfo title='Cure For Me' subtitle='Aurora' />
 
-            <ProgressBar />
+              <ActionButtons />
+
+              <ProgressBar />
+            </div>
           </div>
 
-          <div className='half-ui-view'>
-            <div>
-              <div className='imgContainer'>
-                <AlbumCover height='84px' width='84px' />
+          <div className='right-side'>
+            <div className='half-ui-view'>
+              <div>
+                <div className='imgContainer'>
+                  <AlbumCover height='84px' width='84px' />
+                </div>
+
+                <MusicInfo title='You Never Know' subtitle='BLACKPINK' />
               </div>
 
-              <MusicInfo title='You Never Know' subtitle='BLACKPINK' />
+              <ActionButtons />
+
+              <ProgressBar width='300px' height='8px' />
             </div>
 
-            <ActionButtons />
+            <div className='min-ui-view'>
+              <div>
+                <div className='imgContainer'>
+                  <AlbumCover height='84px' width='84px' />
+                </div>
 
-            <ProgressBar width='300px' height='8px' />
-          </div>
-
-          <div className='min-ui-view'>
-            <div>
-              <div className='imgContainer'>
-                <AlbumCover height='84px' width='84px' />
+                <MusicInfo title="I Love My Body" subtitle='HWASA' />
               </div>
 
-              <MusicInfo title="I Love My Body" subtitle='HWASA' />
+              <ActionButtons />
             </div>
-
-            <ActionButtons />
           </div>
+
         </div>
       </Container>
       <GlobalStyles />
