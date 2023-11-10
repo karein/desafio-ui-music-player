@@ -7,13 +7,13 @@ export const Container = styled.div`
   gap: 10px;
 `
 
-export const Title = styled.text`
+export const Title = styled.span`
   font-size: 24px;
   font-weight: bold;
   flex-wrap: wrap;
 `
 
-export const SubTitle = styled.text`
+export const SubTitle = styled.span`
   font-size: 18px;
   opacity: 50%;
 `

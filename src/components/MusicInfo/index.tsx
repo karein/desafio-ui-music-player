@@ -8,8 +8,8 @@ interface TextProps {
 export function MusicInfo({ title, subtitle }: TextProps) {
   return (
     <Container>
-      <Title>{title}</Title>
-      <SubTitle>{subtitle}</SubTitle>
+      <Title>{title || "TITLE"}</Title>
+      <SubTitle>{subtitle || "ARTIST"}</SubTitle>
     </Container>
   );
 }

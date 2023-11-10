@@ -2,12 +2,44 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   min-height: 100vh;
+  position: relative;
 
   display: flex;
   align-items: center; 
   justify-content: center;
 
   /* border: 1px solid blue; */
+
+  button {
+    &.randomBtn{
+      position: absolute;
+
+      top: 40px;
+      left: 40px;
+
+      height: 48px;
+      outline: none;
+      color: #666B7A;
+      line-height: 1;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 700;
+      min-width: 160px;
+      text-align: center;
+      white-space: normal;
+      letter-spacing: 2px;
+      border-radius: 500px;
+      display: inline-block;
+      padding: 16px 14px 18px;
+      transition-duration: .3s;
+      text-transform: uppercase;
+      border: 1px solid transparent;
+      background-color: transparent;
+      box-shadow: inset 0 0 0 2px #666B7A;
+      transition-property: background-color, border-color, color, box-shadow, filter;
+    }
+
+  }
 
   div {
     &.container-grid {
