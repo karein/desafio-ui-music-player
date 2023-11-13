@@ -24,19 +24,34 @@ export const Container = styled.div`
       cursor: pointer;
       font-size: 14px;
       font-weight: 700;
-      min-width: 160px;
+      min-width: 80px;
       text-align: center;
       white-space: normal;
       letter-spacing: 2px;
       border-radius: 500px;
-      display: inline-block;
-      padding: 16px 14px 18px;
+      /* display: inline-block; */
+      padding: 14px;
       transition-duration: .3s;
       text-transform: uppercase;
       border: 1px solid transparent;
       background-color: transparent;
       box-shadow: inset 0 0 0 2px #666B7A;
       transition-property: background-color, border-color, color, box-shadow, filter;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      &:hover{
+        color: #E1E1E6;
+        background-color: #616467;
+        box-shadow: 0 0 0 2px #666B7A;
+      }
+
+      svg {
+        height: 30px;
+        width: 30px;
+      }
     }
 
   }
@@ -52,6 +67,9 @@ export const Container = styled.div`
       div {
         &.left-side {
           display: flex;
+          /* max-width: 16.655em; */
+          width: 16.655em;
+          /* min-height: 31.125em; */
 
           /* border: 1px solid green; */
           
@@ -78,6 +96,7 @@ export const Container = styled.div`
           gap: 32px;
           display: flex;
           flex-direction: column;
+          width: 22.357em;
 
           /* border: 1px solid yellow; */
 

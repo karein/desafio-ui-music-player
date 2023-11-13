@@ -9,11 +9,12 @@ export const Container = styled.div`
 
 export const Title = styled.span`
   font-size: 24px;
-  font-weight: bold;
   flex-wrap: wrap;
+  font-weight: bold;
 `
 
 export const SubTitle = styled.span`
-  font-size: 18px;
   opacity: 50%;
+  font-size: 18px;
+  flex-wrap: wrap;
 `

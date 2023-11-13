@@ -1,11 +1,15 @@
-import { GlobalStyles } from './styles/global';
-import { Container } from './style';
+import { useState } from 'react';
 
 import { MusicInfo } from './components/MusicInfo';
 import { AlbumCover } from './components/AlbumCover';
 import { ProgressBar } from './components/ProgressBar';
 import { ActionButtons } from './components/ActionButtons';
-import { useState } from 'react';
+
+import { Container } from './style';
+import { GlobalStyles } from './styles/global';
+
+import { ReactComponent as Shuffle } from './assets/icons/Shuffle.svg';
+
 
 interface SongsInfoProps {
   title: string;
@@ -13,11 +17,15 @@ interface SongsInfoProps {
 }
 
 const songsObj = [
+  { title: "Idiota", artist: "Jão" },
+  { title: "HOLO", artist: "Lee Hi" },
   { title: "Magic Shop", artist: "BTS" },
+  { title: "Slow Dancing", artist: "V" },
   { title: "Cure For Me", artist: "Aurora" },
   { title: "I Love My Body", artist: "HWASA" },
   { title: "You Never Know", artist: "BLACKPINK" },
-  { title: "HOLO", artist: "Lee Hi" },
+  { title: "Girassol", artist: "Priscilla ft. Whindersson Nunes" },
+  { title: "Rise", artist: "The Glitch Mob, Mako, and The Word Alive" },
 ]
 
 export function App() {
@@ -27,14 +35,6 @@ export function App() {
 
   const handleChangeSongs = () => {
     let arr: SongsInfoProps[] = [];
-    // console.log('arr 0', arr)
-
-
-    // const newArr = songsObj.filter((value, index) => songsObj.indexOf(value) === index);
-
-    // const ids = songsObj.map(({ title }) => title);
-    // const filtered = songsObj.filter(({ title }, index) => !ids.includes(title, index + 1));
-
 
     while (arr.length < 3) {
       // sorteando um item da lista
@@ -47,26 +47,13 @@ export function App() {
       arr = [...filtered];
     }
 
-    console.log('arr 3', arr)
     setSongList(arr)
-
-
-    // for (let i = 0; i < 3; i++) {
-    //   const song = songsObj[Math.floor(Math.random() * songsObj.length)];
-    //   arr.push({ ...new Set(song) })
-    // }
-
-    // const tests = arr.splice(arr.length, 0, songsObj[0], songsObj[1], songsObj[2]);
-    // console.log('teste', tests);
-
-    // console.log('arr', arr);
-    // setSongList(arr)
   }
 
   return (
     <>
       <Container>
-        <button onClick={handleChangeSongs} className='randomBtn'>sdasd</button>
+        <button onClick={handleChangeSongs} className='randomBtn'> <Shuffle size={16} /> </button>
         <div className='container-grid'>
 
           <div className='left-side'>
@@ -93,7 +80,7 @@ export function App() {
 
               <ActionButtons />
 
-              <ProgressBar width='300px' height='8px' />
+              <ProgressBar />
             </div>
 
             <div className='min-ui-view'>
