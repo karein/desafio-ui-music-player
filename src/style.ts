@@ -6,7 +6,9 @@ export const Container = styled.div`
 
   display: flex;
   align-items: center; 
-  justify-content: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
 
   /* border: 1px solid blue; */
 
@@ -14,8 +16,8 @@ export const Container = styled.div`
     &.randomBtn{
       position: absolute;
 
-      top: 40px;
-      left: 40px;
+      top: 20px;
+      left: 20px;
 
       height: 48px;
       outline: none;
@@ -57,21 +59,102 @@ export const Container = styled.div`
   }
 
   div {
+    &.lyrics, &.translation{
+      /* background-color: red; */
+
+      flex: 1;
+      /* display: block; */
+      height: 100vh;
+      max-width: 25%;
+      position: relative;
+      /* margin-top: calc(20px + 48px); */
+      word-break: break-word;
+
+      div {
+        &.animation_content{
+          /* background-color: gray; */
+
+          top: 100%;
+          position: absolute;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          padding: 0 5px;
+
+          animation: scroll 20s linear infinite;
+
+        }
+        &.animation_content p{
+          text-align: justify;
+          font-size: 18px;
+          font-weight: bold;
+          color: #E1E1E6;
+
+          /* background-color: purple; */
+        }
+      }
+    }
+    /* &.lyrics::after {
+      background-color: green;
+
+      position: absolute;
+      content: " ";
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 80%;
+      background-image: -webkit-linear-gradient(
+        top,
+        rgba(15, 13, 19, 1) 0%,
+        transparent 100%
+      );
+    } */
+  
+    &.translation::after, &.lyrics::after {
+      /* background-color: green; */
+
+      position: absolute;
+      content: " ";
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 60%;
+      background-image: -webkit-linear-gradient(
+        top,
+        rgba(15, 13, 19, 1) 5%,
+        transparent 100%
+      );
+    }
+  
     &.container-grid {
-      gap: 32px;
+      gap: 28px;
       display: flex;
       flex-wrap: wrap;
+      
+      @media (max-width: 721px) {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 5px;
+      }
 
       /* border: 1px solid red; */
 
       div {
         &.left-side {
+          /* flex: 1; */
           display: flex;
           /* max-width: 16.655em; */
-          width: 16.655em;
+          /* max-width: 22em; */
           /* min-height: 31.125em; */
+          width: min-content;
+          height: auto;
 
           /* border: 1px solid green; */
+          /* @media (max-width: 721px) {
+            max-width: 100%;
+          } */
           
           div {
             &.full-ui-view {
@@ -93,7 +176,7 @@ export const Container = styled.div`
       div {
         &.right-side {
           flex: 1;
-          gap: 32px;
+          gap: 28px;
           display: flex;
           flex-direction: column;
           width: 22.357em;
@@ -146,6 +229,32 @@ export const Container = styled.div`
         }
       }
 
+    }
+
+  }
+
+  @keyframes scroll {
+    0% {
+      top: 100%;
+    }
+    100% {
+      top: -120%;
+    }
+  }
+
+  @media (max-width: 865px) {
+    /* background-color: pink; */
+
+    /* flex: 1; */
+    padding-top: calc(20px + 50px);
+
+    div{
+      &.container-grid{
+        flex:1;
+      }
+      &.lyrics, &.translation{
+        display: none;
+      }
     }
   }
 `;

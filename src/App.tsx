@@ -17,21 +17,20 @@ interface SongsInfoProps {
 }
 
 const songsObj = [
-  { title: "Idiota", artist: "Jão" },
-  { title: "HOLO", artist: "Lee Hi" },
-  { title: "Magic Shop", artist: "BTS" },
-  { title: "Slow Dancing", artist: "V" },
-  { title: "Cure For Me", artist: "Aurora" },
-  { title: "I Love My Body", artist: "HWASA" },
-  { title: "You Never Know", artist: "BLACKPINK" },
-  { title: "Girassol", artist: "Priscilla ft. Whindersson Nunes" },
-  { title: "Rise", artist: "The Glitch Mob, Mako, and The Word Alive" },
+  { title: "Santo", artist: "Jão", id: "santo_jao" },
+  { title: "Idiota", artist: "Jão", id: "idiota_jao" },
+  { title: "HOLO", artist: "Lee Hi", id: "holo_lee_hi" },
+  { title: "Magic Shop", artist: "BTS", id: "magic_shop_bts", },
+  { title: "Slow Dancing", artist: "V", id: "slow_dancing_v", },
+  { title: "Cure For Me", artist: "Aurora", id: "cure_for_me_aurora" },
+  { title: "I Love My Body", artist: "HWASA", id: "i_love_my_body_hwasa" },
+  { title: "You Never Know", artist: "BLACKPINK", id: "you_never_know_bp" },
+  { title: "Girassol", artist: "Priscilla ft. Whindersson Nunes", id: "girassol_pri_whind" },
+  { title: "Rise", artist: "The Glitch Mob, Mako, and The Word Alive", id: "rise_mob_mako_alive" },
 ]
 
 export function App() {
   const [songList, setSongList] = useState<SongsInfoProps[]>([]);
-
-
 
   const handleChangeSongs = () => {
     let arr: SongsInfoProps[] = [];
@@ -53,7 +52,12 @@ export function App() {
   return (
     <>
       <Container>
-        <button onClick={handleChangeSongs} className='randomBtn'> <Shuffle size={16} /> </button>
+        <div className='lyrics'>
+          <div className="animation_content">
+            <p>Helloooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo</p>
+          </div>
+        </div>
+
         <div className='container-grid'>
 
           <div className='left-side'>
@@ -97,6 +101,15 @@ export function App() {
           </div>
 
         </div>
+
+        <div className='translation'>
+          <div className="animation_content">
+            <p>World</p>
+          </div>
+        </div>
+
+        <button onClick={handleChangeSongs} className='randomBtn'> <Shuffle size={16} /> </button>
+
       </Container>
       <GlobalStyles />
     </>
