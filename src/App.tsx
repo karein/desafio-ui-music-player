@@ -25,7 +25,6 @@ export interface SongsInfoProps {
 const songsObj = songsArray;
 export function App() {
   const [songList, setSongList] = useState<SongsInfoProps[]>([]);
-  const [lyric, setLyric] = useState<string>('');
   const [songId, setSongId] = useState<string | null>(null);
 
   const handleChangeSongs = () => {
@@ -45,42 +44,7 @@ export function App() {
     setSongList(arr)
   }
 
-  const handleSong = (idSong: string) => {
-    // console.log(idSong)
-    // console.log('musicLyricsArr', musicLyricsArr)
-    setSongId(idSong)
-    const hasLyrics = musicLyricsArr.filter(e => e.name === idSong)
-
-    console.log('handleSong hasLyrics', hasLyrics)
-
-    const lyricString = hasLyrics[0] ? hasLyrics[0].lyrics.replace(/<br\/>/gm, '') : ''
-
-    setLyric(lyricString)
-  }
-
-  // const returnLyrics = () => {
-  //   return (
-  //     <pre>
-  //       I run from the liars, the fuel on the fire<br />
-  //       I know I created myself<br />
-  //       I know I can't fight the sad days and bad nights<br />
-  //       But I never asked for your help<br />
-  //       <br></br >
-  //       You got nerves<br />
-  //       But they never show unless they hurt<br />
-  //       So you blamed it all on my love<br />
-  //       The moving heart I got<br />
-  //       <br></br >
-  //       But I don't need a cure for me<br />
-  //       I don't need it<br />
-  //       No, I don't need a cure for me<br />
-  //       I don't need it<br />
-  //       No, I don't need a cure for me<br />
-  //       I don't need it<br />
-  //       I don't need it<br />
-  //     </pre>
-  //   )
-  // }
+  const handleSong = (idSong: string) => setSongId(idSong)
 
   const returnLyrics = () => {
     const hasLyrics = musicLyricsArr.filter(e => e.name === songId)
@@ -89,16 +53,6 @@ export function App() {
     console.log('lyricString', lyricString, '\n\n')
 
     if (lyricString) {
-      /* forma 1 */
-      // const lines = lyricString.split('<br/>')
-      // console.log('lines', lines, '\n\n')
-      // const content = lines.map((line, index) => <p key={index}>{line}</p>)
-
-      /* forma 2 */
-      // const content = lyricString.join('')
-      // console.log('content', content)
-
-      /* forma 3 */
       const sanitizedData = DOMPurify.sanitize(lyricString);
       console.log('sanitizedData', sanitizedData, '\n\n')
 
@@ -109,7 +63,7 @@ export function App() {
         <div>{content}</div>
       )
     }
-    return (<p>vazio</p>)
+    return null
   }
 
   return (
@@ -117,12 +71,7 @@ export function App() {
       <Container>
         <div className='lyrics'>
           <div className="animation_content">
-            {/* {returnLyrics()} */}
-
-            {/* <p dangerouslySetInnerHTML={{ __html: lyric || '' }} > */}
-            {/* </p> */}
-
-            {lyric}
+            {returnLyrics()}
           </div>
         </div>
 
@@ -172,7 +121,7 @@ export function App() {
 
         <div className='translation'>
           <div className="animation_content">
-            {returnLyrics()}
+            {/* {returnLyrics()} */}
           </div>
         </div>
 
