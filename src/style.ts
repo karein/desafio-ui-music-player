@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  gap: 10px;
   min-height: 100vh;
+  overflow: hidden;
   position: relative;
 
   display: flex;
@@ -65,34 +67,45 @@ export const Container = styled.div`
       flex: 1;
       /* display: block; */
       height: 100vh;
-      max-width: 25%;
+      /* max-width: 25%; */
       position: relative;
       /* margin-top: calc(20px + 48px); */
       word-break: break-word;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       div {
         &.animation_content{
           /* background-color: gray; */
 
-          top: 100%;
-          position: absolute;
-          text-align: center;
           display: flex;
+          text-align: center;
           align-items: center;
           justify-content: center;
+
+
+          top: 30%;
+          position: absolute;
+
           width: 100%;
-          padding: 0 5px;
+          /* padding-left: 10px; */
 
-          animation: scroll 20s linear infinite;
-
+          /* animation: scroll 20s linear infinite; */
         }
         &.animation_content p{
-          text-align: justify;
+          text-align:  center/* justify */;
+
           font-size: 18px;
           font-weight: bold;
           color: #E1E1E6;
 
           /* background-color: purple; */
+        }
+        &.animation_content:hover{
+          animation-play-state: paused;
+          cursor: default;
         }
       }
     }

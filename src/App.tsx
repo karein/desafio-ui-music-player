@@ -1,5 +1,8 @@
 import { useState } from 'react';
 
+import DOMPurify from "dompurify";
+import ReactHtmlParser from "html-react-parser";
+
 import { MusicInfo } from './components/MusicInfo';
 import { AlbumCover } from './components/AlbumCover';
 import { ProgressBar } from './components/ProgressBar';
@@ -9,28 +12,21 @@ import { Container } from './style';
 import { GlobalStyles } from './styles/global';
 
 import { ReactComponent as Shuffle } from './assets/icons/Shuffle.svg';
+import { songsArray } from './helpers/songs/songsList'
+import { musicLyricsArr } from './helpers/songs/formatLyrics'
 
 
-interface SongsInfoProps {
+export interface SongsInfoProps {
   title: string;
   artist: string;
+  id: string
 }
 
-const songsObj = [
-  { title: "Santo", artist: "Jão", id: "santo_jao" },
-  { title: "Idiota", artist: "Jão", id: "idiota_jao" },
-  { title: "HOLO", artist: "Lee Hi", id: "holo_lee_hi" },
-  { title: "Magic Shop", artist: "BTS", id: "magic_shop_bts", },
-  { title: "Slow Dancing", artist: "V", id: "slow_dancing_v", },
-  { title: "Cure For Me", artist: "Aurora", id: "cure_for_me_aurora" },
-  { title: "I Love My Body", artist: "HWASA", id: "i_love_my_body_hwasa" },
-  { title: "You Never Know", artist: "BLACKPINK", id: "you_never_know_bp" },
-  { title: "Girassol", artist: "Priscilla ft. Whindersson Nunes", id: "girassol_pri_whind" },
-  { title: "Rise", artist: "The Glitch Mob, Mako, and The Word Alive", id: "rise_mob_mako_alive" },
-]
-
+const songsObj = songsArray;
 export function App() {
   const [songList, setSongList] = useState<SongsInfoProps[]>([]);
+  const [lyric, setLyric] = useState<string>('');
+  const [songId, setSongId] = useState<string | null>(null);
 
   const handleChangeSongs = () => {
     let arr: SongsInfoProps[] = [];
@@ -49,12 +45,84 @@ export function App() {
     setSongList(arr)
   }
 
+  const handleSong = (idSong: string) => {
+    // console.log(idSong)
+    // console.log('musicLyricsArr', musicLyricsArr)
+    setSongId(idSong)
+    const hasLyrics = musicLyricsArr.filter(e => e.name === idSong)
+
+    console.log('handleSong hasLyrics', hasLyrics)
+
+    const lyricString = hasLyrics[0] ? hasLyrics[0].lyrics.replace(/<br\/>/gm, '') : ''
+
+    setLyric(lyricString)
+  }
+
+  // const returnLyrics = () => {
+  //   return (
+  //     <pre>
+  //       I run from the liars, the fuel on the fire<br />
+  //       I know I created myself<br />
+  //       I know I can't fight the sad days and bad nights<br />
+  //       But I never asked for your help<br />
+  //       <br></br >
+  //       You got nerves<br />
+  //       But they never show unless they hurt<br />
+  //       So you blamed it all on my love<br />
+  //       The moving heart I got<br />
+  //       <br></br >
+  //       But I don't need a cure for me<br />
+  //       I don't need it<br />
+  //       No, I don't need a cure for me<br />
+  //       I don't need it<br />
+  //       No, I don't need a cure for me<br />
+  //       I don't need it<br />
+  //       I don't need it<br />
+  //     </pre>
+  //   )
+  // }
+
+  const returnLyrics = () => {
+    const hasLyrics = musicLyricsArr.filter(e => e.name === songId)
+    const lyricString = hasLyrics[0] ? hasLyrics[0].lyrics : null
+
+    console.log('lyricString', lyricString, '\n\n')
+
+    if (lyricString) {
+      /* forma 1 */
+      // const lines = lyricString.split('<br/>')
+      // console.log('lines', lines, '\n\n')
+      // const content = lines.map((line, index) => <p key={index}>{line}</p>)
+
+      /* forma 2 */
+      // const content = lyricString.join('')
+      // console.log('content', content)
+
+      /* forma 3 */
+      const sanitizedData = DOMPurify.sanitize(lyricString);
+      console.log('sanitizedData', sanitizedData, '\n\n')
+
+      const content = ReactHtmlParser(sanitizedData);
+      console.log('content', content, '\n\n')
+
+      return (
+        <div>{content}</div>
+      )
+    }
+    return (<p>vazio</p>)
+  }
+
   return (
     <>
       <Container>
         <div className='lyrics'>
           <div className="animation_content">
-            <p>Helloooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo</p>
+            {/* {returnLyrics()} */}
+
+            {/* <p dangerouslySetInnerHTML={{ __html: lyric || '' }} > */}
+            {/* </p> */}
+
+            {lyric}
           </div>
         </div>
 
@@ -66,7 +134,7 @@ export function App() {
 
               <MusicInfo title={songList[0]?.title} subtitle={songList[0]?.artist} />
 
-              <ActionButtons />
+              <ActionButtons songInfo={songList[0]} handleSong={handleSong} />
 
               <ProgressBar />
             </div>
@@ -82,7 +150,7 @@ export function App() {
                 <MusicInfo title={songList[1]?.title} subtitle={songList[1]?.artist} />
               </div>
 
-              <ActionButtons />
+              <ActionButtons songInfo={songList[1]} handleSong={handleSong} />
 
               <ProgressBar />
             </div>
@@ -96,7 +164,7 @@ export function App() {
                 <MusicInfo title={songList[2]?.title} subtitle={songList[2]?.artist} />
               </div>
 
-              <ActionButtons />
+              <ActionButtons songInfo={songList[2]} handleSong={handleSong} />
             </div>
           </div>
 
@@ -104,7 +172,7 @@ export function App() {
 
         <div className='translation'>
           <div className="animation_content">
-            <p>World</p>
+            {returnLyrics()}
           </div>
         </div>
 
