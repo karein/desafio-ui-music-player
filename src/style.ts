@@ -85,14 +85,13 @@ export const Container = styled.div`
           align-items: center;
           justify-content: center;
 
-
-          top: 30%;
+          top: 95%;
           position: absolute;
 
           width: 100%;
           /* padding-left: 10px; */
 
-          /* animation: scroll 20s linear infinite; */
+          animation: scroll 20s linear infinite;
         }
         &.animation_content p{
           text-align:  center/* justify */;
@@ -251,7 +250,7 @@ export const Container = styled.div`
       top: 100%;
     }
     100% {
-      top: -120%;
+      top: -110%;
     }
   }
 

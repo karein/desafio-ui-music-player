@@ -125,10 +125,101 @@ const slow_dancing_v = `
 `
 
 const i_love_my_body_hwasa = `
-  It's okay to be okay
-  Don't fake it, don't get hung up
-  Got way too many standards, not sure what's right
-  There is only one answer
+  It's okay to be okay <br/>
+  Don't fake it, don't get hung up <br/>
+  Got way too many standards, not sure what's right <br/>
+  There is only one answer <br/>
+  <br/>
+  Whether I lost weight or not, what's it to you? <br/>
+  It's no longer good to see you <br/>
+  Pointless greetings for who <br/>
+  'Cause my body's more than that <br/>
+  Don't be talking smack, hating on me like <br/>
+  I'm worth so much more than that  <br/>
+  <br/>
+  I love my body and my hair be so shiny <br/>
+  Head to toe be my body (Yeah, that's my body) <br/>
+  Yeah, that's my body, check out my lovely tummy <br/>
+  My arms, my legs so unique (Yeah, that's my body) <br/>
+`
+
+const you_never_know_bp = `
+  On the day when I laughed hard         <br/>
+  Why is the night darker?               <br/>
+  It keeps bringing me down              <br/>
+  The words that everyone said so easily <br/>
+  Maybe you can hear it soon             <br/>
+  I've heard enough I've heard enough    <br/>
+  Of the things that I'm not             <br/>
+  <br/>
+  Even if the whole world changes   <br/>
+  I'm still the same                <br/>
+  I dreamed of this path I walked   <br/>
+  As it was then, as it was then    <br/>
+  The first time I danced every day <br/>
+  I was left there                  <br/>
+  <br/>
+  Sunday night, I've been swallowed by my bed <br/>
+  I've been all over my head <br/>
+  Wonderin' if I gotta try and pretend <br/>
+  I don't know what day it is <br/>
+  I'm afraid I'll find myself hoping to know <br/>
+  The brighter that light gets <br/>
+  My shadow is getting longer <br/>
+  When it's too dazzling <br/>
+  Will I be able to see behind you? <br/>
+  <br/>
+  But you'll never know unless you walk in my shoes <br/>
+  You'll never know, my tangled strings <br/>
+  'Cause everybody sees what they wanna see <br/>
+  It's easier to judge me than to believe <br/>
+  The old thoughts I hid deeply <br/>
+  Sometimes grabbing me and tormenting me <br/>
+  The more I do, I'ma shine, baby <br/>
+  You know they ain't got a shot on me <br/>
+`
+
+const girassol_pri_whind = `
+  Se a vida fosse fácil como a gente quer <br/>
+  Se o futuro a gente pudesse prever      <br/>
+  Eu estaria agora tomando um café        <br/>
+  Sentado com os amigos em frente à TV    <br/>
+  <br/>
+  Eu olharia as aves como eu nunca olhei  <br/>
+  Daria um abraço apertado em meus avós   <br/>
+  Diria eu te amo a quem nunca pensei     <br/>
+  Talvez é o que o universo espera de nós <br/>
+  <br/>
+  Eu quero ser curado e ajudar curar também <br/>
+  Eu quero ser melhor do que eu nunca fui   <br/>
+  Fazer o que eu posso pra me ajudar        <br/>
+  Ser justo e paciente como era Jesus       <br/>
+  <br/>
+  Eu quero dar mais valor até o calor do sol <br/>
+  Que eu esteja preparado pra quem me conduz <br/>
+  Que eu seja todo dia como um girassol      <br/>
+  De costas pro escuro e de frente pra luz   <br/>
+`
+
+const rise_mob_mako_alive = `
+  Welcome to the wild, no heroes and villains <br/>
+  Welcome to the war, we've only begun, so <br/>
+  Pick up your weapon and face it <br/>
+  There's blood on the crown, go and take it <br/>
+  You get one shot to make it out alive, so <br/>
+  <br/>
+  Higher and higher you chase it <br/>
+  It's deep in your bones, go and take it <br/>
+  This is your moment, now is your time, so<br/>
+  <br/>
+  Prove yourself and <br/>
+  RISE, RISE <br/>
+  Make 'em remember you <br/>
+  RISE <br/> 
+  Push through hell and <br/>
+  RISE, RISE <br/>
+  They will remember you <br/>
+  RISE <br/>
 `
 
 export const musicLyricsArr = [
@@ -137,6 +228,9 @@ export const musicLyricsArr = [
   {'name':'holo_lee_hi', 'lyrics': holo_lee_hi},
   {'name':'magic_shop_bts', 'lyrics': magic_shop_bts},
   {'name':'slow_dancing_v', 'lyrics': slow_dancing_v},
+  {'name':'you_never_know_bp', 'lyrics': you_never_know_bp},
   {'name':'cure_for_me_aurora', 'lyrics': cure_for_me_aurora},
+  {'name':'girassol_pri_whind', 'lyrics': girassol_pri_whind},
+  {'name':'rise_mob_mako_alive', 'lyrics': rise_mob_mako_alive},
   {'name':'i_love_my_body_hwasa', 'lyrics': i_love_my_body_hwasa},
 ]
